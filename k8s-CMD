@@ -24,7 +24,7 @@ kubectl config set-context vishwa-context --cluster=kubernetes --namespace=defau
 
 kubectl apply -f nginx-deployment.yaml || kubectl get deployment || kubectl get deployment -o wide || kubectl delete deployment nginx-deployment || 
 
-kubectl create deployment nginx --image=nginx --dry-run=client -o json > deploy.json
+kubectl create deployment nginx --image=nginx --dry-run=client -o json > deploy.json || kubectl create deployment nginx --image=nginx --dry-run=client -o yaml > deploy.yaml ||
 
 
 
