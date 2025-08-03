@@ -28,6 +28,7 @@ kubectl create deployment nginx --image=nginx --dry-run=client -o json > deploy.
 
 kubectl apply -f nginx-service.yaml || kubectl get svc || kubectl delete svc nginx-service ||
 
+kubectl create serviceaccount vishwa --namespace default || 
 
 
 
