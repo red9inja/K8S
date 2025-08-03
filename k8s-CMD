@@ -12,4 +12,5 @@ crictl ps
 
 kubectl config view
 
-openssl genrsa -out vishwa.key 2048
+openssl genrsa -out vishwa.key 2048 || openssl req -new -key vishwa.key -out vishwa.csr -subj "/CN=vishwa/O=group1" ||
+ 
