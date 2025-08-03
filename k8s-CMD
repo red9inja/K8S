@@ -40,6 +40,10 @@ curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/deployments   -H "Auth
 
 curl -k -X GET $APISERVER/api/v1/namespaces/default/pods   -H "Authorization: Bearer $TOKEN"
 
+curl -k -X POST $APISERVER/apis/apps/v1/namespaces/default/deployments -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d @deploy.json
+
+
+
 
 
 
