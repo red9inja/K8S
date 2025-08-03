@@ -1,0 +1,7 @@
+kubectl get nods
+
+kubectl get pods -A
+
+kubectl get pod
+
+kubectl config view
