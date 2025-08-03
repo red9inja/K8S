@@ -61,3 +61,31 @@ workers:
     auth: pem
     pem: /path/to/worker1.pem
 
+#################################################################################################################
+
+kubernetes_version: "1.32.0"
+load_balancer_ip: "10.0.0.100"
+
+masters:
+  - ip: 10.0.0.11
+    user: ubuntu
+    auth: pem
+    pem: /path/to/master1.pem
+  - ip: 10.0.0.12
+    user: ubuntu
+    auth: pem
+    pem: /path/to/master2.pem
+
+workers:
+  - ip: 10.0.0.21
+    user: ubuntu
+    auth: pem
+    pem: /path/to/worker1.pem
+  - ip: 10.0.0.22
+    user: ubuntu
+    auth: pem
+    pem: /path/to/worker2.pem
+
+
+sudo snap install yq
+
