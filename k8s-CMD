@@ -1,6 +1,6 @@
 kubectl get nodes 
 
-kubectl get pods -A || kubectl get pods || kubectl get pods -o wide || kubectl get pods -n $namespace -o wide | grep flannel || kubectl get pods -n kube-system -o wide | grep flannel || 
+kubectl get pods -A || kubectl get pods || kubectl get pods -o wide || kubectl get pods -n $namespace -o wide | grep flannel || kubectl get pods -n kube-system -o wide | grep flannel || kubectl delete pod nginx-deployment-96b9d695-whh6b || 
 
 kubectl describe pod nginx | grep "" Container ID" || 
 
@@ -20,7 +20,9 @@ kubectl apply -f rolerb.yaml || kubectl get role pod-reader -n default || kubect
 
 kubectl config set-credentials vishwa --client-certificate=vishwa.crt --client-key=vishwa.key || kubectl config view --minify --raw | grep name: || kubectl config get-users || 
 
-kubectl config set-context vishwa-context --cluster=kubernetes --namespace=default --user=vishwa || kubectl config use-context vishwa-context || kubectl config get-contexts
+kubectl config set-context vishwa-context --cluster=kubernetes --namespace=default --user=vishwa || kubectl config use-context vishwa-context || kubectl config get-contexts ||
+
+kubectl apply -f nginx-deployment.yaml || kubectl get deployment || kubectl get deployment -o wide || kubectl delete deployment nginx-deployment || 
 
 
 
