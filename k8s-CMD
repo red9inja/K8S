@@ -20,7 +20,8 @@ kubectl apply -f rolerb.yaml || kubectl get role pod-reader -n default || kubect
 
 kubectl config set-credentials vishwa --client-certificate=vishwa.crt --client-key=vishwa.key || kubectl config view --minify --raw | grep name: || kubectl config get-users || 
 
-kubectl config set-context vishwa-context --cluster=kubernetes --namespace=default --user=vishwa
+kubectl config set-context vishwa-context --cluster=kubernetes --namespace=default --user=vishwa || kubectl config use-context vishwa-context
+
 
 
 
