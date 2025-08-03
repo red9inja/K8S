@@ -14,5 +14,5 @@ kubectl config view
 
 openssl genrsa -out vishwa.key 2048 || openssl req -new -key vishwa.key -out vishwa.csr -subj "/CN=vishwa/O=group1" || cat vishwa.csr | base64 | tr -d '\n' ||
 
-kubectl apply -f csr.yaml
+kubectl apply -f csr.yaml ||  kubectl certificate approve vishwa || 
  
