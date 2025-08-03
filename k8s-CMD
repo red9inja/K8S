@@ -18,6 +18,8 @@ kubectl apply -f csr.yaml ||  kubectl certificate approve vishwa || kubectl get 
 
 kubectl apply -f rolerb.yaml || kubectl get role pod-reader -n default || kubectl describe role pod-reader -n default || kubectl describe rolebinding read-pods -n default || 
 
+kubectl config set-credentials vishwa --client-certificate=vishwa.crt --client-key=vishwa.key || 
+
 
 
 
