@@ -1,0 +1,12 @@
+kubernetes_version: "1.32.0"  # Leave blank "" for latest stable version
+
+workers:
+  - ip: "192.168.1.101"
+    user: "root"
+    auth: "password"
+    password: "worker1pass"
+
+  - ip: "192.168.1.102"
+    user: "ubuntu"
+    auth: "pem"
+    pem: "/home/ubuntu/.ssh/worker-key.pem"
