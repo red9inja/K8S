@@ -39,6 +39,7 @@ APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.serv
 curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/deployments \
   -H "Authorization: Bearer $TOKEN"
 
+curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/pods   -H "Authorization: Bearer $TOKEN"
 
 
 
