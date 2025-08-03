@@ -10,3 +10,32 @@ workers:
     user: "ubuntu"
     auth: "pem"
     pem: "/home/ubuntu/.ssh/worker-key.pem"
+
+########################################################################################################
+
+kubernetes_version: "1.32.0"
+load_balancer_ip: "10.0.0.100"  # Shared VIP or external LB pointing to all masters
+
+masters:
+  - ip: 10.0.0.11
+    user: ubuntu
+    auth: pem
+    pem: /home/ubuntu/master1-key.pem
+  - ip: 10.0.0.12
+    user: ubuntu
+    auth: pem
+    pem: /home/ubuntu/master2-key.pem
+  - ip: 10.0.0.13
+    user: ubuntu
+    auth: pem
+    pem: /home/ubuntu/master3-key.pem
+
+workers:
+  - ip: 10.0.0.21
+    user: ubuntu
+    auth: pem
+    pem: /home/ubuntu/worker1-key.pem
+  - ip: 10.0.0.22
+    user: ubuntu
+    auth: pem
+    pem: /home/ubuntu/worker2-key.pem
