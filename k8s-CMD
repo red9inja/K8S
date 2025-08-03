@@ -1,9 +1,14 @@
-kubectl get nods
+kubectl get nodes 
 
-kubectl get pods -A
+kubectl get pods -A || kubectl get pods || kubectl get pods -o wide || kubectl get pods -n $namespace -o wide | grep flannel || kubectl get pods -n kube-system -o wide | grep flannel || 
 
-kubectl get pod
+kubectl describe pod nginx | grep "" Container ID" || 
 
-kubectl get pod -o wide
+kubectl get daemonset -n kube-flannel || 
+
+ctr -n k8s.io container list
+
+crictl ps
 
 kubectl config view
+
