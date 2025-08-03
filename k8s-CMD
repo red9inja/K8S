@@ -4,4 +4,6 @@ kubectl get pods -A
 
 kubectl get pod
 
+kubectl get pod -o wide
+
 kubectl config view
