@@ -16,7 +16,9 @@ openssl genrsa -out vishwa.key 2048 || openssl req -new -key vishwa.key -out vis
 
 kubectl apply -f csr.yaml ||  kubectl certificate approve vishwa || kubectl get csr vishwa -o jsonpath='{.status.certificate}' | base64 --decode > vishwa.crt || kubectl get csr vishwa || 
 
-kubectl apply -f rolerb.yaml || kubectl get role pod-reader -n default ||
+kubectl apply -f rolerb.yaml || kubectl get role pod-reader -n default || kubectl describe role pod-reader -n default || kubectl describe rolebinding read-pods -n default || 
+
+
 
 
  
