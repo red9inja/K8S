@@ -36,8 +36,7 @@ TOKEN=eyJhbGciOiJSUzI1NiIsImtpZCI6Ii1za3JKcnVwSGtCRHJPSFNCcmRmYTNsNGpObW9XOHB2UU
 
 APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}') || kubectl config view ||
 
-curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/deployments \
-  -H "Authorization: Bearer $TOKEN"
+curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/deployments   -H "Authorization: Bearer $TOKEN"
 
 curl -k -X GET $APISERVER/apis/apps/v1/namespaces/default/pods   -H "Authorization: Bearer $TOKEN"
 
