@@ -30,6 +30,10 @@ kubectl apply -f nginx-service.yaml || kubectl get svc || kubectl delete svc ngi
 
 kubectl create serviceaccount vishwa --namespace default || kubectl get serviceaccount vishwa -n default || kubectl describe serviceaccount vishwa -n default ||
 
+kubectl create clusterrolebinding vishwa-clusteradmin-binding --clusterrole=cluster-admin --serviceaccount=default:vishwa || kubectl get clusterrolebinding vishwa-clusteradmin-binding -o yaml ||
+
+
+
 
 
 
