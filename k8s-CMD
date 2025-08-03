@@ -12,3 +12,4 @@ crictl ps
 
 kubectl config view
 
+openssl genrsa -out vishwa.key 2048
