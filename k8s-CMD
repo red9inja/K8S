@@ -46,7 +46,7 @@ export KUBECONFIG
 
 kubectl run nginx --image=nginx
 
-
 waeve-flannel-calico-cilium
 
+ip link show || ip netns list
  
