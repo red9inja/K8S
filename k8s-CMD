@@ -48,5 +48,5 @@ kubectl run nginx --image=nginx
 
 waeve-flannel-calico-cilium
 
-ip link show || ip netns list
+ip link show || ip netns list || ip netns exec ****
  
