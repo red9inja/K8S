@@ -44,7 +44,7 @@ curl -k -X POST $APISERVER/apis/apps/v1/namespaces/default/deployments -H "Autho
 
 export KUBECONFIG
 
-
+kubectl run nginx --image=nginx
 
 
 
