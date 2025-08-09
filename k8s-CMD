@@ -50,4 +50,4 @@ waeve-flannel-calico-cilium
 
 ip link show || ip netns list || ip netns exec **** || ip netns **** ip link
 
-kubectl create deploy demo-nginx --image=nginx --replica=3 || kubectl get rs
+kubectl create deploy demo-nginx --image=nginx --replica=3 || kubectl get rs || kubectl delete pod $pod-name --force
