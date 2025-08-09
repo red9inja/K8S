@@ -52,4 +52,4 @@ ip link show || ip netns list || ip netns exec **** || ip netns **** ip link
 
 kubectl create deploy demo-nginx --image=nginx --replica=3 || kubectl get rs || kubectl delete pod $pod-name --force || kubectl describe deploy
 
-lsns -p 2764
+ps -ef || docker run -d --name $my-container --memory=512 --cpu=1 nginx:latest || ps -aux | grep '[n]ginx' | sort -n -k 2 | head -n 1 | awk '{print $2}' || lsns -p pid 
