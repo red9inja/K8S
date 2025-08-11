@@ -58,4 +58,4 @@ export KUBECONFIG=~/.kube/config || kubectl get nodes --kubeconfig ~/.kube/confi
 
 kubectx
 
-kubectl proxy || curl localhost:8001/api
+kubectl proxy || curl localhost:8001/apis
