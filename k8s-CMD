@@ -59,3 +59,5 @@ export KUBECONFIG=~/.kube/config || kubectl get nodes --kubeconfig ~/.kube/confi
 kubectx
 
 kubectl proxy || curl localhost:8001/apis
+
+kubectl get nodes worker -oyaml | grep CIDR ||
