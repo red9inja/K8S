@@ -60,4 +60,5 @@ kubectx
 
 kubectl proxy || curl localhost:8001/apis
 
-kubectl get nodes master -oyaml | grep CIDR || kubectl get nodes worker -oyaml | grep CIDR || kubectl get nodes worker -oyaml -A || 
+kubectl get nodes master -oyaml | grep CIDR || kubectl get nodes worker -oyaml | grep CIDR || kubectl get nodes worker -oyaml -A || kubectl get nodes master -oyaml -A
+
