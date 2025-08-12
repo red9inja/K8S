@@ -65,4 +65,5 @@ kubectl get nodes master -oyaml | grep CIDR || kubectl get nodes worker -oyaml |
 
 kubectl get ns || kubectl create ns vishwa 
 
-kubectl logs $podname
+kubectl logs $podname || kubectl logs -f $podname
+
