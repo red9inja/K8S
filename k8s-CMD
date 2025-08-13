@@ -68,3 +68,5 @@ kubectl get ns || kubectl create ns vishwa
 kubectl logs $podname || kubectl logs -f $podname || kubectl get pods -oyaml
 
 kubectl port-forward deployment/demo-kubectl-sidecar 8080:80 || curl http://localhost:8080/this-pod-status.json || curl http://localhost:8080/this-node-status.json 
+
+kubectl get pdb
