@@ -6,7 +6,7 @@ kubectl describe pod nginx | grep "" Container ID" ||
 
 kubectl get daemonset -n kube-flannel || 
 
-ctr -n k8s.io container list
+ctr -n k8s.io container list || ctr -n k8s.io container list | grep pause
 
 crictl ps
 
