@@ -71,4 +71,6 @@ kubectl port-forward deployment/demo-kubectl-sidecar 8080:80 || curl http://loca
 
 kubectl get pdb
 
-kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 
+
+kubectl get pods -w
