@@ -75,3 +75,6 @@ kubectl get pdb
 kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 
 
 kubectl get pods -w || kubectl drain $workernode1 --ignore-daemonset
+
+kubectl config get-contexts || kubectl config set-context --current --namespace= || kubectl config set-context --current --namespace=default || kubectl config set-context --current --namespace=todoapp-erp
+
