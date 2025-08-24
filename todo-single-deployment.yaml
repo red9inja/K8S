@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-single
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-single
+  template:
+    metadata:
+      labels:
+        app: todo-single
+    spec:
+      containers:
+        - name: todo-single
+          image: redninja009/todo-app:latest   # Your combined image
+          ports:
+            - containerPort: 3000   # App port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-single-service
+spec:
+  type: NodePort
+  selector:
+    app: todo-single
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30080
