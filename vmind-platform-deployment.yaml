@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vmind-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vmind-platform
+  template:
+    metadata:
+      labels:
+        app: vmind-platform
+    spec:
+      containers:
+        - name: vmind-platform
+          image: redninja009/vmind-platform:V1.0   # Your combined image
+          ports:
+            - containerPort: 80   # App port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vmind-platform-service
+spec:
+  type: NodePort
+  selector:
+    app: vmind-platform
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30083
