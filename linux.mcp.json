@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "linux-shell": {
+      "command": "npx",
+      "args": ["-y", "shell-command-mcp"],
+      "env": {
+        "ALLOWED_COMMANDS": "ls,cat,echo,grep,find,tail,head,less,more,du,df,free,uptime,whoami,id,ps,top,htop,kill,killall,tar,zip,unzip,scp,rsync,ifconfig,ip,ping,netstat,ss,curl,wget,systemctl,journalctl,service,dmesg,uname,hostname,uptime,chmod,chown,mkdir,rmdir,rm,cp,mv,nano,vi,vim,apt,apt-get,yum,dnf,zypper,dpkg,rpm",
+        "TIMEOUT_SECONDS": "1200",
+        "MAX_OUTPUT_BYTES": "2097152"
+      },
+      "workingDirectory": "/"
+    }
+  }
+}
