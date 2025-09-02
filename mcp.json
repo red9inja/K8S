@@ -1,0 +1,195 @@
+{
+  "mcpServers": {
+    "code-editor": {
+      "command": "npx",
+      "args": ["@modelcontext/code-editor-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "INFO",
+        "PROJECT_ROOT": "/home/vishwanath/www/html/Vmind"
+      }
+    },
+    "docker-optimizer": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-docker"],
+      "env": {
+        "DOCKER_HOST": "unix:///var/run/docker.sock",
+        "OPTIMIZATION_MODE": "size,security,performance"
+      }
+    },
+    "ai-code-generator": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-codegen"],
+      "env": {
+        "GENERATION_MODE": "intelligent",
+        "FRAMEWORKS": "spring,mongodb,react,docker,kubernetes"
+      }
+    },
+    "java-build-test": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-java-build"],
+      "env": {
+        "BUILD_TOOL": "maven",
+        "PROJECT_PATH": "/home/vishwanath/www/html/Vmind",
+        "ENABLE_TESTS": "true",
+        "SECURITY_MODE": "true",
+        "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64"
+      },
+      "workingDirectory": "/home/vishwanath/www/html/Vmind"
+    },
+    "MongoDB": {
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server", "--readOnly"],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb://localhost:27017/chatdb"
+      }
+    },
+    "code-review": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-code-review-server/build/index.js"],
+      "env": {
+        "LLM_PROVIDER": "OPEN_AI",
+        "OPENAI_API_KEY": "your-openai-api-key",
+        "OPENAI_MODEL": "gpt-4o-mini"
+      },
+      "workingDirectory": "/home/vishwanath/www/html/Vmind"
+    },
+    "shell-command": {
+      "command": "npx",
+      "args": ["-y", "shell-command-mcp"],
+      "env": {
+        "ALLOWED_COMMANDS": "mvn,./mvnw,gradle,./gradlew,java,cat,ls,echo",
+        "TIMEOUT_SECONDS": "900",
+        "MAX_OUTPUT_BYTES": "1048576"
+      },
+      "workingDirectory": "/root/apt"
+    },
+    "awslabs.cdk-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cdk-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "awslabs.aws-diagram-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-diagram-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "kubernetes-mcp-server": {
+      "command": "uvx",
+      "args": ["kubernetes-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "kubernetes-manager": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-kubernetes"],
+      "env": {
+        "KUBECONFIG": "/root/.kube/config",
+        "AUTO_SCALE": "true",
+        "RESOURCE_OPTIMIZATION": "true"
+      }
+    },
+    "code-converter": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-transpiler"],
+      "env": {
+        "SUPPORTED_LANGUAGES": "java,python,javascript,typescript,go,rust,cpp,kotlin,scala",
+        "OPTIMIZATION_RULES": "performance,memory,readability"
+      }
+    },
+    "linux-optimizer": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-system"],
+      "env": {
+        "SYSTEM_TYPE": "linux",
+        "OPTIMIZATION_TARGET": "containers,performance,security"
+      }
+    },
+    "chat-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "custom-chat-mcp"],
+      "env": {
+        "MONGODB_URI": "mongodb://localhost:27017/chatdb"
+      },
+      "metadata": {
+        "name": "chat-mcp-server",
+        "version": "1.0.0",
+        "description": "MCP server to assist in building a Java + MongoDB chat, calling, and OTP system",
+        "capabilities": {
+          "tools": [
+            {
+              "name": "mongodb_query",
+              "description": "Run a MongoDB query on the connected database",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "collection": {
+                    "type": "string",
+                    "description": "Name of the collection (e.g., users, messages, calls, otps)"
+                  },
+                  "operation": {
+                    "type": "string",
+                    "enum": ["find", "insertOne", "updateOne", "deleteOne"],
+                    "description": "MongoDB operation"
+                  },
+                  "query": {
+                    "type": "object",
+                    "description": "Filter or match query in MongoDB JSON format"
+                  },
+                  "data": {
+                    "type": "object",
+                    "description": "Document data for insert/update"
+                  }
+                },
+                "required": ["collection", "operation"]
+              }
+            },
+            {
+              "name": "generate_java_code",
+              "description": "Generate Java MongoDB driver code snippet for performing the specified action",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "collection": { "type": "string" },
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "insertMessage",
+                      "fetchMessages",
+                      "createUser",
+                      "fetchUser",
+                      "initiateCall",
+                      "logCall",
+                      "sendOtp",
+                      "verifyOtp"
+                    ]
+                  },
+                  "fields": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Relevant fields for the action"
+                  }
+                },
+                "required": ["collection", "action"]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "karaoke-maker": {
+      "command": "npx",
+      "args": ["-y", "karaoke-mcp-server"],
+      "env": {
+        "MODEL": "demucs",
+        "AUTOTUNE": "true"
+      }
+    }
+  }
+}
